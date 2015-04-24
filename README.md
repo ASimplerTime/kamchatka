@@ -1,6 +1,7 @@
 #Kamchatka
 
 The Roguelike HTML5 game made by the LeMelon collective.
+
 Copyright (C) 2015 LeMelon Collective
 
 This program is free software: you can redistribute it and/or modify
