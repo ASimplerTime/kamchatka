@@ -18,12 +18,13 @@ gulp.task('sass', function() {
 
 gulp.task('scss-lint', function() {
   gulp.src('./src/scss/*.scss')
-    .pipe(sasslint());
+    .pipe(sasslint())
+    .pipe(sasslint.failReporter('E'));
 });
 
 gulp.task('css-minify', function() {
   return gulp.src('./res/css/*.css')
-    .pipe(minify_css({compatibility: 'ie8'}))
+    .pipe(minify_css())
     .pipe(gulp.dest('./res/css'));
 });
 
@@ -55,7 +56,9 @@ gulp.task('move-audio', function() {
     .pipe(gulp.dest('./res/audio'));
 });
 
-gulp.task('default', ['scss-lint', 'sass', 'css-minify', 'coffee', 'uglify', 'move-images', 'move-textures', 'move-audio'], function() {
+gulp.task('default', ['scss-lint', 'sass', 'css-minify', 'coffee', 'uglify', 'move-images', 'move-textures', 'move-audio', 'watch']);
+
+gulp.task('watch', function() {
   gulp.watch('./src/scss/*.scss', function() {
     gulp.run('scss-lint', 'sass', 'css-minify');
   });
@@ -73,7 +76,7 @@ gulp.task('default', ['scss-lint', 'sass', 'css-minify', 'coffee', 'uglify', 'mo
   gulp.watch('./src/audio/*', function() {
     gulp.run('move-audio');
   });
-});
+})
 
 // Coffee logging
 
