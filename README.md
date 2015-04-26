@@ -1,5 +1,7 @@
 #Kamchatka
 
+[![Join the chat at https://gitter.im/LeMelonCollective/kamchatka](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/LeMelonCollective/kamchatka?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 The Roguelike HTML5 game made by the LeMelon collective.
 
 Copyright (C) 2015 LeMelon Collective
@@ -22,3 +24,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Clone, install `gulp`, run `npm install`.
 
 As a dependency for `gulp-scss-lint`, run `gem install scss-lint`.
+
+###Contributing
+
+Please request to join the Kamchatka project and Trello board in order to contribute via `lemelon.recruitment@gmail.com`.
+
+First and foremost, install `git-flow`. Then, initialize `git-flow`, with the production branch being `gh-pages` and the version tag being `v`.
+
+Then, join the Trello board + Gitter and let's begin.
