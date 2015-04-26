@@ -18,12 +18,13 @@ gulp.task('sass', function() {
 
 gulp.task('scss-lint', function() {
   gulp.src('./src/scss/*.scss')
-    .pipe(sasslint());
+    .pipe(sasslint())
+    .pipe(sasslint.failReporter('E'));
 });
 
 gulp.task('css-minify', function() {
   return gulp.src('./res/css/*.css')
-    .pipe(minify_css({compatibility: 'ie8'}))
+    .pipe(minify_css())
     .pipe(gulp.dest('./res/css'));
 });
 
@@ -31,12 +32,6 @@ gulp.task('coffee', function() {
   // Compiles src/cs to res/js
   gulp.src('./src/cs/*.coffee')
     .pipe(coffee({bare: true}).on('error', gutil.log))
-    .pipe(gulp.dest('./res/js'));
-});
-
-gulp.task('uglify', function() {
-  return gulp.src('./res/js/*.js')
-    .pipe(uglify())
     .pipe(gulp.dest('./res/js'));
 });
 
@@ -55,13 +50,15 @@ gulp.task('move-audio', function() {
     .pipe(gulp.dest('./res/audio'));
 });
 
-gulp.task('default', ['scss-lint', 'sass', 'css-minify', 'coffee', 'uglify', 'move-images', 'move-textures', 'move-audio'], function() {
+gulp.task('default', ['scss-lint', 'sass', 'css-minify', 'coffee', 'move-images', 'move-textures', 'move-audio', 'watch']);
+
+gulp.task('watch', function() {
   gulp.watch('./src/scss/*.scss', function() {
     gulp.run('scss-lint', 'sass', 'css-minify');
   });
   
   gulp.watch('./src/cs/*.coffee', function() {
-    gulp.run('coffee', 'uglify');
+    gulp.run('coffee');
   });
   
   gulp.watch('./src/images/*', function() {
@@ -73,7 +70,7 @@ gulp.task('default', ['scss-lint', 'sass', 'css-minify', 'coffee', 'uglify', 'mo
   gulp.watch('./src/audio/*', function() {
     gulp.run('move-audio');
   });
-});
+})
 
 // Coffee logging
 
