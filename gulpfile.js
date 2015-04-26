@@ -35,12 +35,6 @@ gulp.task('coffee', function() {
     .pipe(gulp.dest('./res/js'));
 });
 
-gulp.task('uglify', function() {
-  return gulp.src('./res/js/*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('./res/js'));
-});
-
 gulp.task('move-images', function() {
   return gulp.src('./src/images/*')
     .pipe(gulp.dest('./res/images'));
@@ -56,7 +50,7 @@ gulp.task('move-audio', function() {
     .pipe(gulp.dest('./res/audio'));
 });
 
-gulp.task('default', ['scss-lint', 'sass', 'css-minify', 'coffee', 'uglify', 'move-images', 'move-textures', 'move-audio', 'watch']);
+gulp.task('default', ['scss-lint', 'sass', 'css-minify', 'coffee', 'move-images', 'move-textures', 'move-audio', 'watch']);
 
 gulp.task('watch', function() {
   gulp.watch('./src/scss/*.scss', function() {
@@ -64,7 +58,7 @@ gulp.task('watch', function() {
   });
   
   gulp.watch('./src/cs/*.coffee', function() {
-    gulp.run('coffee', 'uglify');
+    gulp.run('coffee');
   });
   
   gulp.watch('./src/images/*', function() {

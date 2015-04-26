@@ -1,5 +1,115 @@
 @import 'basic';
 
-body {
-  background-color: rgb(255, 255, 255);
+@media screen and (max-width: 799px), (max-height: 599px) {
+  .start-cover {
+    margin: 2em auto;
+  }
+  
+  .start-menu {
+    display: none;
+  }
+  
+  .start-about {
+    display: none;
+  }
+}
+
+.background {
+  background: url('/res/images/night.jpeg');
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.start-cover {
+  margin: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+
+  h1 {
+    display: inline-block;
+    font-size: 8em;
+    margin: 0;
+    margin-top: 25vh;
+  }
+}
+
+%button {
+  color: rgba(255, 255, 255, .75);
+  display: inline-block;
+  transition: 500ms all ease;
+}
+
+%button:hover {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 500ms all ease;
+}
+
+%button:after {
+  color: rgba(255, 255, 255, 0);
+  content: '\276F';
+  margin-left: -.5em;
+  transition: 500ms all ease;
+}
+
+%button:hover::after {
+  color: rgb(255, 255, 255);
+  margin-left: .5em;
+  transition: 500ms all ease;
+}
+
+.button-start {
+  @extend %serif;
+  @extend %button;
+  border-bottom: .125rem rgba(255, 255, 255, 0) solid;
+  font-size: 1.5em;
+  padding: 1em 0;
+  text-transform: uppercase;
+}
+
+.button-start:hover {
+  border-bottom-color: rgb(255, 255, 255);
+  padding: 1em 2em;
+}
+
+
+.start-about {
+  margin-top: 100%;
+  padding: 2em;
+  
+  h1 {
+    font-size: 4em;
+    text-align: center;
+  }
+  
+  p {
+    text-align: center;
+  }
+  
+  .start-about-team {
+    padding: 1em;
+    text-align: center;
+    
+    li {
+      list-style: none; 
+    }
+    
+    li:before {
+      content: '\276F' ' ';
+      margin-left: -0.5rem;
+    }
+    
+    li:after {
+      color: rgba(255, 255, 255, .75);
+      content: ' ' attr(data-roles);
+      display: block;
+      margin-left: 0.25rem;
+    }
+  }
 }

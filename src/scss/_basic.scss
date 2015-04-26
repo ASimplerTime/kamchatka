@@ -1,5 +1,84 @@
-html,
-body {
+// The main sans-serif font used.
+@font-face {
+  font-family: 'Antic';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Antic'), local('Antic-Regular'), url(https://fonts.gstatic.com/s/antic/v7/IVZiQl5Ww-TJ-PrbjA5gMKCWcynf_cDxXwCLxiixG1c.woff2) format('woff2');
+}
+// The serif edition of the aforesaid font used.
+@font-face {
+  font-family: 'Antic Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Antic Slab'), local('AnticSlab-Regular'), url(https://fonts.gstatic.com/s/anticslab/v4/8c9q46CAcsp9TiRX9KLgZAzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+}
+// The 'legendary' looking font.
+@font-face {
+  font-family: 'Galdeano';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Galdeano Regular'), local('Galdeano-Regular'), url(https://fonts.gstatic.com/s/galdeano/v6/sNNdoZxHJuJuQ4ASrbgR4HYhjbSpvc47ee6xR_80Hnw.woff2) format('woff2');
+}
+
+@media screen and (max-width: 799px), (max-height: 599px) {
+  .start-mobile-notice {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 800px) and (min-height: 600px) {
+  .start-mobile-notice {
+    display: none;
+  }
+}
+
+* {
+  color: rgb(255, 255, 255);
+  font-family: Antic, 'Antic Slab', Galdeano, sans-serif, serif;
+  font-weight: 400;
   margin: 0;
   padding: 0;
+  transition: 500ms all ease;
+}
+
+*:hover {
+  transition: 500ms all ease;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+%serif,
+.serif {
+  font-family: Galdeano, 'Antic Slab', serif;
+}
+
+a {
+  border-left: .125rem rgba(255, 255, 255, 0) solid;
+  border-right: .125rem rgba(255, 255, 255, 0) solid;
+  text-decoration: none;
+}
+
+a:hover {
+  border-left-color: rgb(255, 255, 255);
+  border-right-color: rgb(255, 255, 255);
+  padding: 0 1em;
+}
+
+.start-mobile-notice {
+  margin: 1em;
+  text-align: center;
 }
