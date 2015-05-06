@@ -3,7 +3,7 @@
   <head>
     <title>Project Kamchatka: The LeMelon Collective's Roguelike HTML5 Game</title>
     <link type="text/css" rel="stylesheet" href="./res/css/index.css"/>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="./res/js/index.js"></script>
   </head>
   <body>
@@ -12,16 +12,16 @@
       <h1>&#x416;</h1>
       <div class="start-menu">
         <!-- Start button -->
-        <div class="button-start" style="margin-bottom: 1em;">Start</div> <br/>
-        <a style="margin-top: 1em;" href="#about">About &#x416;</a><br/>
-        <a style="margin-top: 1em;" href="https://github.com/LeMelonCollective/kamchatka">Github</a>
+        <div class="button-start" style="margin-bottom: 1em;" data-lang-prop="indexMenuStart">Start</div> <br/>
+        <a style="margin-top: 1em;" href="#about" data-lang-prop="indexMenuAbout">About &#x416;</a><br/>
+        <a style="margin-top: 1em;" href="https://github.com/LeMelonCollective/kamchatka" data-lang-prop="indexMenuGithub">Github</a>
       </div>
     </section>
     <section id="about" class="start-about">
-      <h1>About &#x416;</h1>
-      <p>Kamchatka (&#x416;) is a Roguelike HTML5 game made by the LeMelon collective.</p>
+      <h1 data-lang-prop="resolutionWarning">About &#x416;</h1>
+      <p data-lang-prop="resolutionWarning">Kamchatka (&#x416;) is a Roguelike HTML5 game made by the LeMelon collective.</p>
       <div class="start-about-team">
-        <h2>The &#x416; Team</h2>
+        <h2 data-lang-prop="resolutionWarning">The &#x416; Team</h2>
         <ul>
           <li data-roles="Code Director, Sound Director">Kevin Mo</li>
           <li data-roles="">Sandro del Rivo</li>
@@ -31,8 +31,9 @@
         </ul>
       </div>
     </section>
-    <p id="start-mobile-notice" class="start-mobile-notice">
+    <p id="start-mobile-notice" class="start-mobile-notice" data-lang-prop="resolutionWarning">
       NOTICE: Project Kamchatka does not work with mobile devices yet (screens less than 800px wide and 600px high). Please try loading Project Kamchatka on a computer.
     </p>
+    <span style="background-color: rgba(0, 0, 0, 0.6); position: fixed; bottom: 0; padding: 1em;">Copyright &copy; 2015 LeMelon Collective.</span>
   </body>
 </html>

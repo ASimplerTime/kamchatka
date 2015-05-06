@@ -15,7 +15,7 @@
 }
 
 .background {
-  background: url('/res/images/night.jpeg');
+  background: url('../images/night.jpeg');
   height: 100%;
   opacity: 0;
   position: fixed;
@@ -102,14 +102,14 @@
     
     li:before {
       content: '\276F' ' ';
-      margin-left: -0.5rem;
+      margin-left: -.5rem;
     }
     
     li:after {
       color: rgba(255, 255, 255, .75);
       content: ' ' attr(data-roles);
       display: block;
-      margin-left: 0.25rem;
+      margin-left: .25rem;
     }
   }
 }

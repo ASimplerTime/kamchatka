@@ -50,6 +50,11 @@ gulp.task('move-audio', function() {
     .pipe(gulp.dest('./res/audio'));
 });
 
+gulp.task('move-lang', function() {
+  return gulp.src('./src/lang/*')
+    .pipe(gulp.dest('./res/lang'));
+});
+
 gulp.task('default', ['scss-lint', 'sass', 'css-minify', 'coffee', 'move-images', 'move-textures', 'move-audio', 'watch']);
 
 gulp.task('watch', function() {
