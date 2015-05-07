@@ -55,7 +55,7 @@ gulp.task('move-lang', function() {
     .pipe(gulp.dest('./res/lang'));
 });
 
-gulp.task('default', ['scss-lint', 'sass', 'css-minify', 'coffee', 'move-images', 'move-textures', 'move-audio', 'watch']);
+gulp.task('default', ['scss-lint', 'sass', 'css-minify', 'coffee', 'move-images', 'move-textures', 'move-audio', 'move-lang', 'watch']);
 
 gulp.task('watch', function() {
   gulp.watch('./src/scss/*.scss', function() {
@@ -74,6 +74,9 @@ gulp.task('watch', function() {
   });
   gulp.watch('./src/audio/*', function() {
     gulp.run('move-audio');
+  });
+  gulp.watch('./src/lang/*', function() {
+    gulp.run('move-lang');
   });
 })
 

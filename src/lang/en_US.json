@@ -1,6 +1,7 @@
 {
   "name": "Project Kamchatka",
   "title": "Project Kamchatka: The LeMelon Collective's Roguelike HTML5 Game",
+  "copy": "Copyright &copy; 2015 LeMelon Collective.",
   
   "indexMenuStart": "Start",
   "indexMenuAbout": "About &#x416;",
@@ -9,5 +10,10 @@
   "indexAboutDescription": "Kamchatka (&#x416;) is a Roguelike HTML5 game made by the LeMelon collective.",
   "indexAboutTeam": "The &#x416; Team",
   
-  "resolutionWarning": "NOTICE: Project Kamchatka does not work with mobile devices yet (screens less than 800px wide and 600px high). Please try loading Project Kamchatka on a computer."
+  "promptLanguage": "Select language",
+  
+  "warningResolution": "NOTICE: Project Kamchatka does not work with mobile devices yet (screens less than 800px wide and 600px high). Please try loading Project Kamchatka on a computer.",
+  
+  "englishUS": "English (US)",
+  "klingon": "Klingon"
 }

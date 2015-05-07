@@ -1,8 +1,37 @@
+setLanguage = () ->
+  
+
 $(document).ready ->
   $("a[href^=#]").on "click", (e) ->
     e.preventDefault()
     $("html, body").animate scrollTop: $($(this).attr 'href').offset().top , 1000
-
+  # Replace all elements with the data-lang-prop tag with the language.
+  langJSON = {};  # Will contain the JSON w/ the strings that will be used.
+  # Retrieve language transfer file first.
+  $.getJSON "res/lang/lang_s.json", (data_s) ->
+    $.getJSON "res/lang/"+data_s["englishUS"], (data_en) ->
+      $.each data_en, (index, str) ->
+        langJSON[index] = str
+      if localStorage.getItem("lang") == null or localStorage.getItem("lang") == undefined
+        localStorage.setItem("lang", "englishUS")
+      $.getJSON "res/lang/"+data_s[localStorage.getItem("lang")], (data_lang) ->
+        $.each data_lang, (index, str) ->
+          langJSON[index] = str
+      # Get language names in their language
+      $.getJSON "res/lang/lang_t.json", (data_t) ->
+        $.each data_t, (index, str) ->
+          langJSON["LANG"+index] = str
+        $("*").each (i) ->
+          # Paste the text from the langJSON.
+          if $(this).data("lang-name") != undefined
+            $(this).text(langJSON[$(this).data("lang-name")] + " (" + langJSON[("LANG"+$(this).data("lang-name"))] + ")")
+          else if $(this).data("lang-prop") != undefined
+            $(this).html(langJSON[$(this).data("lang-prop")])
+  $("#lang-selector").on "change", (e) ->
+    lang = $(this).val()
+    localStorage.setItem "lang", lang # Store the items
+    window.location.reload();   # Reload page.
+    
 $(window).scroll ->
   ratio = ($(document).scrollTop()/window.innerHeight)
   if (8-(6*ratio)) > 2

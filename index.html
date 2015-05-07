@@ -18,10 +18,10 @@
       </div>
     </section>
     <section id="about" class="start-about">
-      <h1 data-lang-prop="resolutionWarning">About &#x416;</h1>
-      <p data-lang-prop="resolutionWarning">Kamchatka (&#x416;) is a Roguelike HTML5 game made by the LeMelon collective.</p>
+      <h1 data-lang-prop="indexMenuAbout">About &#x416;</h1>
+      <p data-lang-prop="indexAboutDescription">Kamchatka (&#x416;) is a Roguelike HTML5 game made by the LeMelon collective.</p>
       <div class="start-about-team">
-        <h2 data-lang-prop="resolutionWarning">The &#x416; Team</h2>
+        <h2 data-lang-prop="indexAboutTeam">The &#x416; Team</h2>
         <ul>
           <li data-roles="Code Director, Sound Director">Kevin Mo</li>
           <li data-roles="">Sandro del Rivo</li>
@@ -34,6 +34,13 @@
     <p id="start-mobile-notice" class="start-mobile-notice" data-lang-prop="resolutionWarning">
       NOTICE: Project Kamchatka does not work with mobile devices yet (screens less than 800px wide and 600px high). Please try loading Project Kamchatka on a computer.
     </p>
-    <span style="background-color: rgba(0, 0, 0, 0.6); position: fixed; bottom: 0; padding: 1em;">Copyright &copy; 2015 LeMelon Collective.</span>
+    <div style="background-color: rgba(0, 0, 0, 0.6); position: fixed; bottom: 0; padding: 1em;">
+      <span data-lang-prop="copy">Copyright &copy; 2015 LeMelon Collective.</span>
+      <select id="lang-selector">
+        <option value="englishUS" data-lang-prop="promptLanguage">Select language</option>
+        <option value="englishUS" data-lang-name="englishUS">English (US)</option>
+        <option value="klingon" data-lang-name="klingon">Klingon</option>
+      </select>
+    </div>
   </body>
 </html>
