@@ -1,10 +1,15 @@
 {
+    "english_us": "English Hol (US)",
     "name": "Kamchatka jInmol",
     "title": "Kamchatka jInmol: LeMelon Collective Roguelike HTML5 Qujmey",
+    "copy": "Copyright &copy; 2015 LeMelon Collective.",
     "indexMenuStart": "Start",
     "indexMenuAbout": "umqu' ghot &#x416;",
     "indexMenuGithub": "Github",
     "indexAboutDescription": "Kamchatka (&#x416;) Roguelike HTML5 Qujmey chenmoH pong LeMelon Collective.",
     "indexAboutTeam": "Kamchatka ghom",
-    "resolutionWarning": "tu': wej Qap jInmol Kamchatka mobile jan 'ach (jIHDaq puqvaD 800px tev 'ej 600px jen). DubelmoHchugh jInmol Kamchatka loading De'wI' vInID."
+    "promptLanguage": "Hol wIv",
+    "warningResolution": "tu': wej Qap jInmol Kamchatka mobile jan 'ach (jIHDaq puqvaD 800px tev 'ej 600px jen). DubelmoHchugh jInmol kamchatka loading De'wI' vInID.",
+    "englishUS": "English Hol (US)",
+    "klingon": "tlhIngan Hol"
 }
